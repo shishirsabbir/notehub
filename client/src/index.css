@@ -1,68 +1,618 @@
-/* :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+/*CSS reset Start*/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
 }
 
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+/* Set core body defaults */
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+    min-height: 100vh;
+    line-height: 1.5;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+/*CSS reset End*/
+
+/*root files Start*/
+:root {
+    --base-color: #fa00ff;
+    --bg-color: #292929;
+
+    --bg-color-light: #fff;
+    --bg-color-text: #242424; /*for white bg*/
+}
+/*root files End*/
+
+/*styles in body Start*/
+.body {
+    background-color: var(--bg-color-light);
+    font-family: "Roboto", sans-serif;
+
+    display: flex;
+    flex-direction: column;
+}
+/*styles in body End*/
+
+/*Utility classes Start*/
+.roboto {
+    font-family: "Roboto", sans-serif;
+    font-style: normal;
+}
+
+.logo-font {
+    font-family: "Montserrat Alternates", sans-serif;
+    font-style: normal;
+}
+/*Utility classes End*/
+
+/*Container Start*/
+.container {
+    width: 92%;
+    max-width: 1400px;
+    margin-inline: auto;
+}
+/*Container End*/
+
+/*Styles for Header Start*/
+.header {
+    background-color: var(--bg-color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+}
+
+/*design for logo Start*/
+.logo-wrapper {
+    /* border: 1px solid red; */
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo-img {
+    width: 52px;
+}
+
+.logo-text {
+    text-decoration: none;
+    font-size: clamp(32px, 2vw + 1rem, 40px);
+    font-weight: bold;
+}
+
+.note {
+    color: var(--base-color);
+    margin-left: 12px;
+}
+
+.hub {
+    color: #000000;
+}
+/*design for logo End*/
+
+/*Design for dropdown Start (taken from w3shool)*/
+.dropbtn {
+    border-radius: 50%;
+    cursor: pointer;
+    border: transparent;
+}
+
+.dropbtn-img {
+    background-image: url(images/zhang-kaiyv-97VDbiTKEQk-unsplash.jpg);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    position: center;
+    background-size: cover;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    left: -160%;
+    border-radius: 9px;
+    background-color: #e2e2e2;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #232323;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content .log-out {
+    color: rgb(255, 53, 53);
+}
+
+.dropdown-content a:hover {
+    background-color: #c1c1c1;
+    border-radius: 9px;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*Design for dropdown End*/
+/*Styles for Header End*/
+
+/*Line design Start*/
+.line {
+    height: 1px;
+    background-color: #130015;
+    width: 92%;
+    margin-inline: auto;
+    margin-top: 4px;
+}
+/*Line design End*/
+
+/***/
+/*Index page styles Start*/
+/***/
+
+/*Styles for main Start*/
+.main {
+    margin-bottom: 36px;
+}
+/*Design for CTA btn Start*/
+.cta-btn {
+    cursor: pointer;
+    padding: 12px 20px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background-color: #200015;
+    color: #ffffff;
+
+    margin-top: 32px;
+    /* box-shadow: 0px 0px 0px 0px #000; */
+    transition: background-color 250ms ease-in;
+}
+
+@media (max-width: 426px) {
+    .cta-btn {
+        width: 100%;
+    }
+}
+
+.cta-btn:hover {
+    background-color: #404040;
+}
+
+.cta-btn-wrapper {
+    width: 140px;
+    margin-inline: auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4px;
+}
+
+@media (min-width: 667px) {
+    .cta-btn-wrapper {
+        width: 160px;
+    }
+}
+
+.btn-img {
+    width: 32px;
+}
+
+.btn-text {
+    display: block;
+    font-weight: 400;
+    font-size: clamp(20px, 1vw + 1rem, 24px);
+    /* margin-left: 12px; */
+}
+/*Design for CTA btn End*/
+
+/*Design for card (index page card section) Start*/
+.all-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: rgb(241, 240, 240);
+    color: var(--bg-color-text);
+    border: 1px solid rgb(140, 140, 140);
+    border-radius: 9px;
+    padding: 20px;
+
+    transition: transform 250ms ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: scale(1.1);
+}
+
+.card-header {
+    font-size: 24px;
+}
+
+.card-details {
+    margin-top: 8px;
+}
+/*Design for card (index page card section) End*/
+/*Styles for main End*/
+
+/***/
+/*Index page styles End*/
+/***/
+
+/*Design for footer Start*/
+.footer {
+    width: 100%;
+    background-color: #8d8d8d;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    margin-top: auto;
+}
+
+.footer-text {
+    text-align: center;
+    font-size: 14px;
+}
+
+@media (max-width: 425px) {
+    .footer-text {
+        font-size: 12px;
+    }
+}
+/*Design for footer End*/
+
+/***/
+/*Popup Page styles Start*/
+/***/
+
+/*Design for popup-card section Start*/
+/*Label visullay hidden Start*/
+.visually-hidden {
+    display: none;
+    /* visibility: hidden; */
+}
+/*Label visullay hidden End*/
+
+/*Styles for popup card Start*/
+.popup-card {
+    display: block;
+    border-radius: 9px;
+    margin-top: 32px;
+}
+
+/*Styles for title input Start*/
+.form-control {
+    font-family: inherit;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 24px;
+    width: 100%;
+    color: #232323;
+    background-color: #e2e2e2;
+    border-radius: 9px 9px 0 0;
+    border: transparent;
+    border-bottom: 1px solid var(--base-color);
+
+    box-sizing: border-box;
+    border-bottom: 1px solid #7b017d;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+.form-control:focus {
+    border-bottom: 1px solid var(--base-color);
+}
+/*Styles for title input End*/
+
+/*Styles for textarea Start*/
+.popup-textarea {
+    background-color: #e2e2e2;
+    color: white;
+    border-radius: 0px 0px 9px 9px;
+    width: 100%;
+    padding: 12px 20px;
+    font-family: inherit;
+    font-size: 18px;
+    height: 48dvh;
+    border: transparent;
+
+    box-sizing: border-box;
+    border-bottom: 1px solid #7b017d;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+    resize: none;
+}
+
+.popup-textarea:focus {
+    border-bottom: 1px solid var(--base-color);
+}
+/*Styles for textarea End*/
+
+/*Styles for popup-card buttons Start*/
+.all-buttons {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    gap: 20px;
+    margin-top: 12px;
+}
+
+/* @media (max-width: 375px) {
+    .all-buttons {
+        flex-direction: column-reverse;
+        gap: 12px;
+    }
 } */
+
+.btn {
+    padding: 16px 28px;
+    border-radius: 9px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    font-size: 18px;
+    cursor: pointer;
+    border: transparent;
+}
+
+@media (max-width: 431px) {
+    .btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 425px) {
+    .btn {
+        /* padding: 16px 28px; */
+        font-size: 16px;
+    }
+}
+
+.btn-delete {
+    background-color: #0f0f0f;
+    color: white;
+    transition: background-color 250ms ease-in-out;
+}
+
+.btn-delete:hover,
+.btn-delete:focus {
+    background-color: #383838;
+}
+
+.btn-save {
+    color: white;
+    background-color: #fa00ff;
+    transition: background-color 250ms ease-in-out;
+}
+
+.btn-save:hover,
+.btn-save:focus {
+    background-color: #fd88ff;
+}
+/*Styles for popup-card buttons End*/
+/*Styles for popup card End*/
+/*Design for popup-card section End*/
+
+/***/
+/*Popup Page styles End*/
+/***/
+
+/***/
+/*Sign Up page styles Start*/
+/***/
+
+.signup-page-wrapper {
+    position: relative;
+    top: 100px;
+}
+
+@media (max-width: 478px) {
+    .signup-page-wrapper {
+        top: 50px;
+    }
+}
+
+/*Sign up page background image Start*/
+.signup-page-body {
+    min-height: 100dvh;
+    background-image: url(images/cubes.svg);
+    background-repeat: no-repeat;
+}
+/*Sign up page background image End*/
+
+/*Hearder styles Start*/
+.img-title-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-header-img {
+    width: 82px;
+}
+
+.signup-text {
+    color: white;
+    font-size: clamp(32px, 2vw + 1rem, 38px);
+}
+
+.signup-sub-text {
+    text-align: center;
+    color: rgb(231, 231, 231);
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.sub-text-link {
+    font-size: 14px;
+    color: #fa00ff;
+}
+
+.sub-text-link:hover {
+    color: #c600c9;
+}
+/*Hearder styles End*/
+
+/*Styles of sign up form Start*/
+.signup-form {
+    width: 96%;
+    max-width: 760px;
+    margin-inline: auto;
+    margin-top: 24px;
+}
+
+/*Styles for input box Start*/
+.input-box {
+    padding: 12px 16px;
+    border-radius: 9px;
+    background-color: #232323;
+    color: white;
+    border: 1px solid #006172;
+    width: 100%;
+
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
+}
+
+.input-box:focus {
+    border: 1px solid #00d9ff;
+}
+
+.email {
+    margin-block: 12px;
+}
+/*Styles for input box End*/
+
+.input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+}
+
+@media (max-width: 478px) {
+    .input-group {
+        flex-direction: column;
+    }
+}
+
+/*Sign up btn styles Start*/
+.signup-btn {
+    display: block;
+    padding: 14px 40px;
+    background-color: #00e1ff;
+    margin-inline: auto;
+    text-align: center;
+    margin-top: 24px;
+    transition: background-color 250ms ease-in-out;
+}
+
+.signup-btn:hover {
+    background-color: #00b0cb;
+}
+
+@media (max-width: 478px) {
+    .signup-btn {
+        width: 100%;
+    }
+}
+/*Sign up btn styles End*/
+/*Styles of sign up form End*/
+
+/***/
+/*Sign Up page styles End*/
+/***/

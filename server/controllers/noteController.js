@@ -1,5 +1,5 @@
 // imports
-const Note = require('./noteModel');
+const Note = require("./..models/noteModel");
 
 // controllers
 const getAllNotes = async (req, res) => {
@@ -7,7 +7,7 @@ const getAllNotes = async (req, res) => {
         const notes = await Note.find();
 
         res.status(200).json({
-            status: 'success',
+            status: "success",
             results: notes.length,
             data: {
                 notes,
@@ -17,8 +17,8 @@ const getAllNotes = async (req, res) => {
         console.log(err);
 
         res.status(504).json({
-            status: 'error',
-            message: 'Error! Check your console',
+            status: "error",
+            message: "Error! Check your console",
         });
     }
 };
@@ -28,7 +28,7 @@ const getNote = async (req, res) => {
         const note = await Note.findById(req.params.id);
 
         res.status(200).json({
-            status: 'success',
+            status: "success",
             data: {
                 note,
             },
@@ -37,8 +37,8 @@ const getNote = async (req, res) => {
         console.log(err);
 
         res.status(504).json({
-            status: 'error',
-            message: 'Error! Check your console',
+            status: "error",
+            message: "Error! Check your console",
         });
     }
 };
@@ -52,23 +52,26 @@ const createNote = async (req, res) => {
 
         if (!newNote) {
             return res.status(504).json({
-                status: 'failed',
-                message: 'there is an error creating notes',
+                status: "failed",
+                message: "there is an error creating notes",
             });
         }
 
-        res.status(200).json({
-            status: 'success',
+        // console.log(req.body);
+        // console.log(newNote);
+
+        res.status(201).json({
+            status: "success",
             data: {
-                newNote,
+                note: newNote,
             },
         });
     } catch (err) {
         console.log(err);
 
         res.status(504).json({
-            status: 'error',
-            message: 'Error! Check your console',
+            status: "error",
+            message: "Error! Check your console",
         });
     }
 };
