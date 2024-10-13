@@ -17,6 +17,14 @@ const noteSchema = new mongoose.Schema({
         maxLength: [700, "note desc should be around 500 chars"],
         trim: true,
     },
+    type: {
+        type: String,
+        enum: {
+            values: ['public', 'private'],
+            message: 'type should be either public or private'
+        },
+        default: 'private'
+    },
     author: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "User",

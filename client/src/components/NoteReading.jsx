@@ -1,4 +1,10 @@
-export default function NoteReading() {
+/* eslint-disable react/prop-types */
+export default function NoteReading({ setShowWriter, setShowNote }) {
+    function handleEditNote() {
+        setShowWriter(true);
+        setShowNote(false);
+    }
+
     return (
         <section className="note-showing displaying-card-reading">
             <div className="note-showing-container">
@@ -13,7 +19,7 @@ export default function NoteReading() {
                     Facilis doloremque similique atque aut.
                 </p>
             </div>
-            <button className="edit-btn btn">
+            <button className="edit-btn btn" onClick={handleEditNote}>
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="18"

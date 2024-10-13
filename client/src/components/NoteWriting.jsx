@@ -1,4 +1,5 @@
-export default function NoteWriting() {
+/* eslint-disable react/prop-types */
+export default function NoteWriting({ onShowWriter }) {
     return (
         <section className="note-writing displaying-card-writing">
             <form action="#" method="#" className="popup-card">
@@ -19,7 +20,12 @@ export default function NoteWriting() {
                 </div>
                 <div className="btn-group">
                     <button className="note-btn delete-btn">Delete</button>
-                    <button className="note-btn cancel-btn">Cancel</button>
+                    <button
+                        className="note-btn cancel-btn"
+                        onClick={() => onShowWriter(false)}
+                    >
+                        Cancel
+                    </button>
                 </div>
             </form>
         </section>

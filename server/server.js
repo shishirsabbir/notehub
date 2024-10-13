@@ -7,7 +7,10 @@ const app = require('./app');
 const mongoose = require('mongoose');
 
 // db setup
-const DB = process.env.DB_CLOUD.replace('<PASSWORD>', process.env.DB_PASSWORD);
+// const DB = process.env.DB_CLOUD.replace('<PASSWORD>', process.env.DB_PASSWORD);
+
+// for local db
+const DB = process.env.DB_LOCAL;
 mongoose
     .connect(DB)
     .then(() => {

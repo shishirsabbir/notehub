@@ -1,9 +1,16 @@
+/* eslint-disable react/prop-types */
+import { useState } from 'react';
 import CardContainer from '../components/CardContainer';
 import Header from '../components/Header';
+import NoteWriting from '../components/NoteWriting';
+import NoteReading from '../components/NoteReading';
 
-function NewNoteBtn() {
+function NewNoteBtn({ onShowWriter }) {
     return (
-        <button className="cta-btn">
+        <button
+            className="cta-btn"
+            onClick={() => onShowWriter((value) => !value)}
+        >
             <div className="cta-btn-wrapper">
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -21,13 +28,23 @@ function NewNoteBtn() {
 }
 
 export default function Homepage() {
+    const [showWriter, setShowWriter] = useState(false);
+    const [showNote, setShowNote] = useState(false);
+
     return (
         <>
             <Header />
             <div className="line"></div>
             <main className="main container">
-                <NewNoteBtn />
-                <CardContainer />
+                <NewNoteBtn onShowWriter={setShowWriter} />
+                {showWriter && <NoteWriting onShowWriter={setShowWriter} />}
+                {showNote && (
+                    <NoteReading
+                        setShowNote={setShowNote}
+                        setShowWriter={setShowWriter}
+                    />
+                )}
+                <CardContainer showNote={showNote} setShowNote={setShowNote} />
             </main>
         </>
     );
