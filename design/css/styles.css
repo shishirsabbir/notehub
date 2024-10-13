@@ -906,3 +906,58 @@ textarea:not([rows]) {
 /*(Most of the styles for this login page are connected to the sign up page's styles)*/
 /*Styles for login page start*/
 /****/
+
+/****/
+/*Styles for the component-delete-message*/
+.note-delete-mg {
+    margin-inline: auto;
+    margin-top: 86px;
+    width: 96%;
+    max-width: 464px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid black;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+@media (min-width: 1442px) {
+    .note-delete-mg {
+        max-width: 520px;
+    }
+}
+
+.delete-mg-text {
+    text-align: center;
+}
+
+.btn-group-delete-mg {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.yes-btn {
+    background-color: #000;
+    color: #fff;
+    transition: all 250ms ease-in;
+    /* margin-top: auto; */
+}
+
+.yes-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.no-btn {
+    background-color: #ffffff;
+    color: #000;
+    transition: all 250ms ease-in;
+}
+
+.no-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
