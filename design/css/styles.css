@@ -1,0 +1,885 @@
+/* CSS reset Start*/
+/***/
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Prevent font size inflation */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+    margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role="list"],
+ol[role="list"] {
+    list-style: none;
+}
+
+/* Set core body defaults */
+body {
+    min-height: 100vh;
+    line-height: 1.5;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1,
+h2,
+h3,
+h4,
+button,
+input,
+label {
+    line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1,
+h2,
+h3,
+h4 {
+    text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+    color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+    min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+    scroll-margin-block: 5ex;
+}
+/***/
+/* CSS reset End*/
+
+/*Container start*/
+.container {
+    width: 92%;
+    max-width: 1400px;
+    margin-inline: auto;
+}
+/*Container end*/
+
+/*line start*/
+.line {
+    height: 1px;
+    background-color: #000000;
+    width: 96%;
+    margin-inline: auto;
+    margin-top: 8px;
+}
+/*line end*/
+
+/****/
+/*Styles for landing page start*/
+/*Landing page body bg strat*/
+.landing-page-body {
+    background-image: url(../images/landing-bg.svg);
+    background-repeat: no-repeat;
+    background-position: 0% 18%;
+}
+/*Landing page body bg end*/
+
+/*Header start*/
+.header {
+    background-color: var(--bg-color-light);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 18px;
+}
+
+@media (max-width: 426px) {
+    .header {
+        margin-top: 32px;
+    }
+}
+/*Header End*/
+
+/*Logo start*/
+.logo-wrapper {
+    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+@media (max-width: 352px) {
+    .logo-wrapper {
+        gap: 4px;
+    }
+}
+
+.logo-img {
+    width: 50px;
+}
+
+@media (max-width: 768px) {
+    .logo-img {
+        width: 46px;
+    }
+}
+@media (max-width: 424px) {
+    .logo-img {
+        width: 34px;
+    }
+}
+
+.logo-text {
+    width: 150px;
+}
+
+@media (max-width: 768px) {
+    .logo-text {
+        width: 120px;
+    }
+}
+
+@media (max-width: 352px) {
+    .logo-text {
+        width: 100px;
+    }
+}
+/*Logo end*/
+
+/*login btn start*/
+.login-btn {
+    display: block;
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    gap: 8px;
+
+    border-radius: 9px;
+    background-color: #000;
+    padding: 12px 28px;
+}
+@media (max-width: 768px) {
+    .login-btn {
+        padding: 10px 24px;
+        font-size: 14px;
+    }
+}
+@media (max-width: 352px) {
+    .login-btn {
+        padding: 8px 10px;
+    }
+}
+@media (max-width: 424px) {
+    .login-btn {
+        padding: 10px 20px;
+    }
+}
+
+.login-btn-img {
+    width: 28px;
+}
+
+@media (max-width: 768px) {
+    .login-btn-img {
+        width: 24px;
+    }
+}
+@media (max-width: 424px) {
+    .login-btn-img {
+        width: 20px;
+    }
+}
+
+.login-btn-text {
+    font-size: 18px;
+    color: #fff;
+    margin-block: auto;
+}
+
+@media (max-width: 424px) {
+    .login-btn-text {
+        font-size: 16px;
+    }
+}
+/*login btn end*/
+
+/**display section (display text and display btn) start**/
+.display {
+    text-align: center;
+    margin-top: 52px;
+}
+
+@media (max-width: 426px) {
+    .display {
+        margin-top: 36px;
+    }
+}
+
+.display-text {
+    font-size: clamp(36px, 3vw + 1rem, 52px);
+}
+
+.display-btn {
+    font-weight: bold;
+    font-size: 22px;
+    background-color: #000;
+    color: #fff;
+    padding: 16px 24px;
+    border-radius: 12px;
+    margin-top: 36px;
+}
+
+@media (max-width: 426px) {
+    .display-btn {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 427px) {
+    .display-btn {
+        padding: 16px 32px;
+        margin-top: 42px;
+    }
+}
+/**display section (display text and display btn) end**/
+
+/**feature section start**/
+.feature {
+    margin-top: 94px;
+    margin-bottom: 20px;
+}
+/*grid system of the feature cards start*/
+.all-feature-cards {
+    display: grid;
+    gap: 12px;
+}
+
+@media (min-width: 769px) {
+    .all-feature-cards {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/*grid system of the feature cards end*/
+
+/*feature card style start*/
+.feature-card {
+    border-radius: 9px;
+    border: 1px solid #000;
+    background: linear-gradient(180deg, #242424 43.4%, #444 100%);
+    color: #fff;
+    padding: 24px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.feature-card-title {
+    font-size: clamp(20px, 1vw + 1rem, 24px);
+    text-align: center;
+}
+
+.feature-card-text {
+    font-size: 16px;
+    text-align: center;
+}
+
+@media (max-width: 424px) {
+    .feature-card-text {
+        font-size: 14px;
+    }
+}
+/*feature card style end*/
+/**feature section end**/
+/*Styles for landing page end*/
+/****/
+
+/****/
+/*Styles for home page (notes page) start*/
+/*dropdown start*/
+.dropbtn {
+    border-radius: 26px;
+    background-color: white;
+    cursor: pointer;
+    border: transparent;
+
+    display: flex;
+    align-items: center;
+    border: 1px solid rgb(0, 0, 0);
+}
+
+.dropbtn-img {
+    background-image: url(../images/zhang-kaiyv-97VDbiTKEQk-unsplash.jpg);
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    position: center;
+    background-size: cover;
+}
+
+@media (max-width: 424px) {
+    .dropbtn-img {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/*Newly added start (username)*/
+.dropbtn-username {
+    margin-inline: 6px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media (max-width: 424px) {
+    .dropbtn-username {
+        font-size: 14px;
+    }
+}
+@media (max-width: 352px) {
+    .dropbtn-username {
+        font-size: 12px;
+    }
+}
+/*Newly added end (username)*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-top: 7px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    /* left: -200%; */
+    border-radius: 9px;
+    background-color: #030303;
+    color: #fff;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 18px;
+}
+
+.dropdown-content .dropdown-item-myac {
+    color: #ffffff;
+}
+
+.dropdown-content .log-out {
+    color: rgb(255, 53, 53);
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 8px;
+}
+
+.log-out-img {
+    fill: #ff0000;
+}
+
+.dropdown-content a:hover {
+    background-color: #ffffff;
+}
+
+.dropdown-content .dropdown-item-myac:hover {
+    border-radius: 9px 9px 0 0;
+}
+
+.dropdown-content .log-out:hover {
+    border-radius: 0 0 9px 9px;
+}
+
+.dropdown-content .dropdown-item-myac:hover {
+    color: black;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/*dropdown end*/
+
+/*cta btn start*/
+.cta-btn {
+    cursor: pointer;
+    padding: 18px 62px;
+    border: 1px solid transparent;
+    border-radius: 9px;
+    background-color: #000;
+    color: #ffffff;
+    border: 1px solid black;
+    margin-top: 32px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition: background-color 250ms ease-in;
+}
+
+@media (max-width: 426px) {
+    .cta-btn {
+        width: 100%;
+    }
+}
+
+.btn-img {
+    fill: #ffffff;
+    transition: fill 250ms ease-in;
+}
+
+.cta-btn:hover {
+    background-color: #cdcdcd;
+    color: #000;
+}
+
+.cta-btn:hover .btn-img {
+    fill: #000;
+}
+
+.cta-btn-wrapper {
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.btn-text {
+    display: block;
+    font-weight: 400;
+    font-size: clamp(20px, 1vw + 1rem, 24px);
+}
+/*cta btn end*/
+
+/*note card viewing grid system start*/
+.all-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 40px;
+}
+/*note card viewing grid system end*/
+
+/*note card style start*/
+.card {
+    background-color: #ffffff;
+    color: #030303;
+    border: 1px solid transparent;
+    border: 1px solid #000;
+    border-radius: 9px;
+    padding: 20px;
+
+    transition: all 250ms ease-in-out;
+    cursor: pointer;
+}
+
+.card:hover {
+    background-color: #232323;
+    color: #ffffff;
+}
+
+.card-header {
+    font-size: 24px;
+}
+
+.card-details {
+    margin-top: 16px;
+    line-height: 150%;
+    font-size: 18px;
+}
+/*note card style end*/
+/*Styles for home page (notes page) end*/
+/****/
+
+/****/
+/*Styles for note reading page start*/
+/*the blury glass style start*/
+.glass {
+    height: 100dvh;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+
+    position: fixed;
+    inset: 0;
+    z-index: 3;
+}
+/*the blury glass style end*/
+
+/*displaying the blury glass start*/
+.putting-glass {
+    height: 100dvh;
+    overflow: hidden;
+}
+/*displaying the blury glass end*/
+
+/*Note reading card style start*/
+.note-showing {
+    border: 1px solid rgb(7, 7, 7);
+    border-radius: 9px;
+    background-color: #fff;
+    padding: 24px;
+    width: 100%;
+    max-width: 769px;
+    margin-inline: auto;
+    margin-top: 62px;
+}
+
+.note-showing-title {
+    font-size: 24px;
+}
+
+.note-showing-texts {
+    line-height: 150%;
+    font-size: 16px;
+    margin-top: 8px;
+}
+
+/*edit btn start*/
+.edit-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px 20px;
+    border-radius: 9px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+    margin-top: 24px;
+    transition: all 250ms ease-in;
+}
+
+@media (max-width: 582px) {
+    .edit-btn {
+        width: 100%;
+    }
+}
+
+.edit-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.bi-pencil {
+    transition: all 250ms ease-in;
+}
+
+.edit-btn:hover .bi-pencil {
+    fill: #000;
+}
+
+.edit-btn-text {
+    font-size: 16px;
+}
+/*edit btn end*/
+/*Note reading card style end*/
+
+/*The note that is showing above the blury glass start*/
+.displaying-card-reading {
+    position: absolute;
+    width: 95%;
+    position: absolute;
+    top: 29%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+/*The note that is showing above the blur glass end*/
+/*Styles for note reading page end*/
+/****/
+
+/****/
+/*Styles for note writing page start*/
+/**style of note writing section start**/
+.popup-card {
+    border: 1px solid rgb(0, 0, 0);
+    background-color: #fff;
+    padding: 8px 26px 26px 26px;
+    border-radius: 9px;
+    width: 100%;
+    max-width: 769px;
+    margin-inline: auto;
+    margin-top: 62px;
+}
+
+/*Note title area start*/
+.note-title {
+    font-family: inherit;
+    padding: 12px 0px 6px 0;
+    font-weight: bold;
+    font-size: 24px;
+    width: 100%;
+    color: #232323;
+    background-color: #ffffff;
+    border-radius: 9px 9px 0 0;
+    border: transparent;
+    border-bottom: 1px solid #000;
+
+    outline: none;
+}
+/*Note title area end*/
+
+/*Note text area start*/
+.note-textarea {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-radius: 0px 0px 9px 9px;
+    width: 100%;
+    padding: 12px 0px;
+    font-family: inherit;
+    font-size: 18px;
+    height: 48dvh;
+    line-height: 150%;
+    border: transparent;
+    border-bottom: 1px solid #ffffff;
+
+    outline: none;
+    resize: none;
+    overflow-y: scroll;
+}
+
+.note-textarea:focus {
+    border-bottom: 1px solid #fff;
+}
+/*note text area end*/
+
+/*Note btns start*/
+.btn-group {
+    display: flex;
+    flex-direction: column;
+    justify-content: right;
+    gap: 12px;
+
+    margin-top: 12px;
+}
+
+@media (min-width: 582px) {
+    .btn-group {
+        flex-direction: row;
+    }
+}
+
+.note-btn {
+    font-family: inherit;
+    padding: 12px 24px;
+    font-size: 16px;
+    border-radius: 9px;
+    display: block;
+    cursor: pointer;
+}
+
+.delete-btn {
+    background-color: #000;
+    color: #fff;
+    transition: all 250ms ease-in;
+}
+
+.delete-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
+.cancel-btn {
+    background-color: #ffffff;
+    color: #000;
+    transition: all 250ms ease-in;
+}
+
+.cancel-btn:hover {
+    background-color: #000;
+    color: #fff;
+}
+/*Note btns end*/
+/**style of note writing section end**/
+
+/*The note that is showing above the blur glass start*/
+.displaying-card-writing {
+    position: absolute;
+    width: 95%;
+    position: absolute;
+    top: 44%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+/*The note that is showing above the blur glass end*/
+
+/*Styles for note writing page end*/
+/****/
+
+/****/
+/*Styles for sign up page start*/
+.sign-up {
+    background-image: url(../images/sign-bg.svg);
+    background-repeat: no-repeat;
+    padding-top: 62px;
+    height: 100dvh;
+}
+
+.container-sign-up {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/*sign up page logo start*/
+.logo-sign-up {
+    width: 62px;
+}
+
+@media (min-width: 769px) {
+    .logo-sign-up {
+        width: 75px;
+    }
+}
+/*sign up page logo end*/
+
+/*sign up page title start*/
+.sign-up-title {
+    font-size: clamp(26px, 1.5vw + 1rem, 32px);
+    margin-top: 4px;
+}
+/*sign up page title end*/
+
+/*sign up form (form size) start*/
+.sign-up-form {
+    width: 90%;
+    margin-top: 28px;
+}
+@media (min-width: 769px) {
+    .sign-up-form {
+        width: 80%;
+        max-width: 700px;
+    }
+}
+/*sign up form (form size) end*/
+
+/*form input area (flex system of input areas) start*/
+.form-input-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+/*form input area (flex system of input areas) end*/
+
+/*form group (first and last name) start*/
+.form-group {
+    width: 100%;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (min-width: 769px) {
+    .form-group {
+        flex-direction: row;
+        gap: 12px;
+    }
+}
+/*form group (first and last name) end*/
+
+/*form control start*/
+.form-control {
+    padding: 14px 28px;
+    border-radius: 9px;
+    width: 100%;
+    border: 1px solid #000;
+    font-size: 16px;
+}
+/*form control end*/
+
+/*sign btn (both for login and sign up page) start*/
+.sign-btn {
+    display: block;
+    margin-inline: auto;
+    background-color: #000;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    border-radius: 9px;
+    padding: 12px 20px;
+    font-size: 16px;
+    margin-top: 28px;
+}
+
+@media (min-width: 769px) {
+    .sign-btn {
+        font-size: 18px;
+    }
+}
+
+.sign-btn-img {
+    width: 20px;
+}
+
+.sign-btn-text {
+    color: #fff;
+}
+/*sign btn (both for login and sign up page) end*/
+/*Styles for sign up page end*/
+/****/
+
+/****/
+/*Styles for login page start*/
+/*remember me text start*/
+.remember-me-text {
+    font-size: 14px;
+}
+
+.remember-me {
+    margin-top: 4px;
+}
+/*remember me text start*/
+/*(Most of the styles for this login page are connected to the sign up page's styles)*/
+/*Styles for login page start*/
+/****/
