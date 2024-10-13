@@ -578,7 +578,16 @@ textarea:not([rows]) {
 .note-showing-texts {
     line-height: 150%;
     font-size: 16px;
-    margin-top: 8px;
+    margin-top: 24px;
+}
+/*btn-group-reading start*/
+.btn-group-reading {
+    /* border: 1px solid red; */
+    display: flex;
+    align-items: center;
+    /* justify-content: center; */
+    gap: 12px;
+    margin-top: 28px;
 }
 
 /*edit btn start*/
@@ -592,7 +601,6 @@ textarea:not([rows]) {
     background-color: #000;
     color: #fff;
     cursor: pointer;
-    margin-top: 24px;
     transition: all 250ms ease-in;
 }
 
@@ -619,6 +627,20 @@ textarea:not([rows]) {
     font-size: 16px;
 }
 /*edit btn end*/
+
+/*delete btn start*/
+.delete-btn {
+    background-color: #000;
+    color: #fff;
+    transition: all 250ms ease-in;
+    /* margin-top: auto; */
+}
+
+.delete-btn:hover {
+    background-color: #fff;
+    color: #000;
+}
+
 /*Note reading card style end*/
 
 /*The note that is showing above the blury glass start*/
@@ -715,13 +737,14 @@ textarea:not([rows]) {
     cursor: pointer;
 }
 
-.delete-btn {
+.save-btn {
     background-color: #000;
     color: #fff;
     transition: all 250ms ease-in;
+    /* margin-top: auto; */
 }
 
-.delete-btn:hover {
+.save-btn:hover {
     background-color: #fff;
     color: #000;
 }
